@@ -6,4 +6,5 @@ Do not edit rows by hand: run `scripts/new_site.py` or the **Create site** workf
 <!-- sites:start -->
 | Name | Description | Type | Link | Created |
 |------|-------------|------|------|---------|
+| test-site | Throwaway site to test the Create site workflow | folder | [open](sites/test-site/) | 2026-11-27 |
 <!-- sites:end -->
