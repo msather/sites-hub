@@ -2,6 +2,10 @@
 
 Newest first. Add an entry whenever something unexpected is found and fixed (see `.claude/skills/learn/SKILL.md`). Each entry: what happened, cause, fix.
 
+## 2026-11-27: Music sites: what is verified
+- **Classic rock trivia:** the song bank (63 artists, about 494 songs) comes from general knowledge, with covers and duets left out on purpose. The code checks every round (200 simulated rounds: right answer always correct, no repeated options, no repeated artists, artists do not repeat across 12 rounds). To add songs, edit `sites/classic-rock-trivia/data.js` and keep each title under only one artist.
+- **Seattle grunge:** dates and facts are from general knowledge. Agent sessions cannot open Wikipedia, so link names were not click-tested. If a link is dead, fix it in `sites/seattle-grunge/data.js`. Places link to map searches, not exact addresses.
+
 ## 2026-11-27: Two Create site runs at once conflicted
 - **What happened:** Two runs started seconds apart. The second failed with a merge conflict in `sites.md` ([failed run](https://github.com/msather/sites-hub/actions/runs/45953314417)).
 - **Cause:** The workflow checked out the snapshot of `main` from when it was *triggered*, not the newest one.

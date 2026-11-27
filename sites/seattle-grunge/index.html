@@ -9,10 +9,55 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Seattle Grunge</h1>
-  <p>An interactive guide to Seattle grunge: timeline, bands, places and a quiz, with links to learn more.</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Seattle, Washington</p>
+    <h1>Grunge</h1>
+    <p class="lead">How a rainy corner of the Pacific Northwest turned loud, muddy guitars into a worldwide sound.</p>
+  </div>
+</header>
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap">
+    <a href="#intro">Story</a><a href="#timeline">Timeline</a><a href="#bands">Bands</a><a href="#places">Places</a><a href="#quiz">Quiz</a><a href="#more">Learn more</a>
+  </div>
+</nav>
+<main class="wrap">
+  <section id="intro">
+    <h2>What is grunge?</h2>
+    <p>Grunge mixes the speed and attitude of punk with the heavy weight of metal. It grew up in Seattle and nearby towns in the 1980s, fed by cheap venues, long rainy winters and a small, tight community of bands. By 1991 it was selling millions of records.</p>
+    <p>This guide has a timeline you can click through, profiles of the key bands, places to look up, and a short quiz. Every section links out so you can keep exploring.</p>
+  </section>
+
+  <section id="timeline">
+    <h2>Timeline</h2>
+    <div id="eraFilter" class="chips" role="group" aria-label="Filter timeline by era"></div>
+    <ol id="tl" class="tl"></ol>
+  </section>
+
+  <section id="bands">
+    <h2>The bands</h2>
+    <p class="muted">Tap a band to open its profile.</p>
+    <div id="bandGrid" class="cards"></div>
+  </section>
+
+  <section id="places">
+    <h2>Places</h2>
+    <p class="muted">Some historic venues and studios have closed or changed. Check hours before you visit, and be respectful at memorial spots.</p>
+    <ul id="placeList" class="places"></ul>
+  </section>
+
+  <section id="quiz">
+    <h2>Quick quiz</h2>
+    <div id="quizBox" class="panel"></div>
+  </section>
+
+  <section id="more">
+    <h2>Learn more</h2>
+    <ul id="moreList"></ul>
+  </section>
 </main>
-<footer><small>&copy; 2026 Seattle Grunge</small></footer>
+<footer class="wrap"><small>A fan guide summarising general knowledge. For details and sources, follow the links above.</small></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
