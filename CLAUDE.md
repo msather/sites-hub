@@ -21,7 +21,7 @@ This repo is the control center for a set of static websites on GitHub Pages. **
 ## How to do common things
 - **New site:** follow `.claude/skills/new-site`. Preferred: trigger the **Create site** workflow (`workflow_dispatch`, inputs `name`, `description`). Fallback: `python3 scripts/new_site.py --name X --description "..."`, then commit.
 - **Edit a site:** change files in `sites/<name>/`, run `python3 scripts/check.py`, commit, push to `main`.
-- **Deploy:** see `.claude/skills/deploy-site`. Pushing to `main` deploys automatically via `pages.yml`; the Create site workflow also deploys.
+- **Deploy:** (needs Settings → Pages → Source = GitHub Actions, set once by the owner) see `.claude/skills/deploy-site`. Pushing to `main` deploys automatically via `pages.yml`; the Create site workflow also deploys.
 
 ## Conventions
 - Branch `main` is deployable. Commit messages: short imperative summary.

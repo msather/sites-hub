@@ -26,8 +26,6 @@ jobs:
         with:
           ref: main
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: python3 scripts/build_hub.py
       - uses: actions/upload-pages-artifact@v3
         with:
