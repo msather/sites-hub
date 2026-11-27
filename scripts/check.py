@@ -12,7 +12,7 @@ from sites_md import NAME_RE, ROOT, read_sites  # noqa: E402
 
 REQUIRED = [
     "CLAUDE.md", "AGENTS.md", "README.md", "sites.md",
-    "docs/architecture.md", "docs/agents.md",
+    "docs/architecture.md", "docs/agents.md", "docs/lessons.md",
     ".github/workflows/create-site.yml", ".github/workflows/pages.yml",
     ".github/workflows/check.yml",
     "templates/site-starter/index.html", "templates/site-starter/style.css",

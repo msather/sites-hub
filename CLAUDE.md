@@ -2,6 +2,14 @@
 
 This repo is the control center for a set of static websites on GitHub Pages. **Agents make all code changes; the owner does not read code.** Optimise for clear summaries to the owner in plain language, and keep the repo self-explanatory for the next agent.
 
+## The owner is non-technical
+The owner knows nothing about git or code. So:
+- **Answer technical questions yourself** (settings, errors, git, Actions). Decide, do, and explain simply. Ask only about things that are truly the owner's call (looks, content, purpose).
+- **Always give links** to what you discuss or change: the live page, the file or commit on GitHub, the workflow run, the settings page. Base: https://github.com/msather/sites-hub.
+- **Say what you changed** after every change, in plain language, with the link.
+- When asking the owner to click something, give the exact link and the exact button names.
+- **Learn over time:** after discovering or correcting anything, record it (skill `.claude/skills/learn`, file `docs/lessons.md`). Read `docs/lessons.md` at the start of work.
+
 ## Hard rules
 1. **This repo is PUBLIC.** Never commit secrets, tokens, emails, real names, phone numbers, addresses or anything private. `python3 scripts/check.py` scans for token patterns; run it before every commit.
 2. **GitHub only.** No backend, no other clouds, no databases, no paid services. Static HTML/CSS/JS only.
@@ -16,7 +24,7 @@ This repo is the control center for a set of static websites on GitHub Pages. **
 - `sites.md`: registry table (source of truth for the hub index).
 - `scripts/`: `new_site.py`, `build_hub.py`, `check.py`, `sites_md.py` (stdlib Python only).
 - `.github/workflows/`: `create-site.yml` (manual), `pages.yml` (deploy), `check.yml`.
-- `docs/`: `architecture.md`, `agents.md`.
+- `docs/`: `architecture.md`, `agents.md`, `lessons.md`.
 
 ## How to do common things
 - **New site:** follow `.claude/skills/new-site`. Preferred: trigger the **Create site** workflow (`workflow_dispatch`, inputs `name`, `description`). Fallback: `python3 scripts/new_site.py --name X --description "..."`, then commit.
