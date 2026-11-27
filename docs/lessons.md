@@ -2,6 +2,10 @@
 
 Newest first. Add an entry whenever something unexpected is found and fixed (see `.claude/skills/learn/SKILL.md`). Each entry: what happened, cause, fix.
 
+## 2026-11-27: Check every new site in a real browser at phone width
+- **What happened:** The first fishing guide worked but the filter checkboxes and a dropdown looked wrong on a phone.
+- **Fix:** After `python3 scripts/build_hub.py`, open `_site/sites/<name>/index.html` with Playwright at 390x844, check for console errors and look at a screenshot before publishing. Rule of thumb: a CSS rule like `.controls label` can accidentally override a more specific-looking `fieldset label`; check both.
+
 ## 2026-11-27: Pages source must be "GitHub Actions"
 - **What happened:** First deploys failed with "Resource not accessible by integration"; later Pages was set to deploy from the `/docs` folder, which would have published the agent docs instead of the hub.
 - **Cause:** The default workflow token cannot turn Pages on, and the branch-folder setting ignores our build workflow.

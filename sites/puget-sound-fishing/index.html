@@ -3,16 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Puget Sound Fishing</title>
-<meta name="description" content="Puget Sound fishing areas by WDFW Marine Area: what is biting each month, tide timing and lures that work.">
+<title>Puget Sound Fishing Guide</title>
+<meta name="description" content="Puget Sound fishing by WDFW Marine Area: what is biting each month, tide timing and lures that work.">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Puget Sound Fishing</h1>
-  <p>Puget Sound fishing areas by WDFW Marine Area: what is biting each month, tide timing and lures that work.</p>
+<header>
+  <div class="wrap">
+    <h1>Puget Sound Fishing Guide</h1>
+    <p>Marine Areas 5 to 13: popular spots, what is in season, tide timing and lures.</p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="notice" role="note">
+    <strong>Check the rules first.</strong> Seasons, limits and closures change every year and sometimes mid-season.
+    Confirm in the <a id="regsLink" href="#">WDFW regulations</a> and
+    <a id="emergencyLink" href="#">emergency rule changes</a> before you fish. This guide shows typical patterns, not legal dates.
+  </section>
+
+  <section class="controls" aria-label="Filters">
+    <label>Month
+      <select id="month"></select>
+    </label>
+    <fieldset>
+      <legend>Fish</legend>
+      <label><input type="checkbox" value="salmon" checked> Salmon</label>
+      <label><input type="checkbox" value="bottomfish" checked> Bottomfish</label>
+      <label><input type="checkbox" value="shellfish" checked> Squid / crab / shrimp</label>
+      <label><input type="checkbox" value="trout" checked> Cutthroat / resident coho</label>
+    </fieldset>
+    <label>Area
+      <select id="area"></select>
+    </label>
+  </section>
+
+  <p id="summary" class="summary" aria-live="polite"></p>
+  <div id="areas"></div>
+
+  <section class="notice">
+    <strong>Tides and currents:</strong> Use
+    <a id="tidesLink" href="#">NOAA tide predictions</a> and
+    <a id="currentsLink" href="#">current predictions</a>.
+    In Puget Sound, current speed often matters more than tide height. See the
+    <a id="mapLink" href="#">WDFW Marine Area map</a>.
+  </section>
 </main>
-<footer><small>&copy; 2026 Puget Sound Fishing</small></footer>
+<footer class="wrap"><small>Information is general guidance only. Fish safely, wear a life jacket and follow all regulations.</small></footer>
+<noscript><p class="wrap">This guide needs JavaScript to display the area data.</p></noscript>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
