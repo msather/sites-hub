@@ -2,6 +2,12 @@
 
 Newest first. Add an entry whenever something unexpected is found and fixed (see `.claude/skills/learn/SKILL.md`). Each entry: what happened, cause, fix.
 
+## 2026-11-27: Fishing guide data that was verified vs. not
+- **Marine forecast zones** were checked against NWS (PZZ131 Central Strait, PZZ132 East Strait, PZZ133 San Juans, PZZ134 Admiralty Inlet, PZZ135 Puget Sound/Hood Canal). My first memory of these numbers was wrong, so always look IDs up instead of recalling them.
+- **NOAA tide stations** confirmed: Seattle 9447130, Olympia 9446969, Quilcene 9445272. Not confirmed from search (from memory): Neah Bay 9443090, Port Angeles 9444090, Friday Harbor 9449880, Port Townsend 9444900, Tacoma 9446484, Everett 9447659. The page prints the station name beside the tides so a wrong one is easy to spot. Agent sessions cannot reach NOAA, so confirm in a browser: https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=<station>.
+- **Boat launch names and fishing spots** are from general knowledge and are not verified against official sources.
+- Live tides load in the visitor's browser (NOAA allows this, no key), with a saved copy and written fallback.
+
 ## 2026-11-27: Check every new site in a real browser at phone width
 - **What happened:** The first fishing guide worked but the filter checkboxes and a dropdown looked wrong on a phone.
 - **Fix:** After `python3 scripts/build_hub.py`, open `_site/sites/<name>/index.html` with Playwright at 390x844, check for console errors and look at a screenshot before publishing. Rule of thumb: a CSS rule like `.controls label` can accidentally override a more specific-looking `fieldset label`; check both.

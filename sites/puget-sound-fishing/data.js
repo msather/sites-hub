@@ -5,8 +5,8 @@ window.FISHING = {
   links: {
     regs: "https://wdfw.wa.gov/fishing/regulations",
     emergency: "https://wdfw.wa.gov/fishing/regulations/emergency-rule-changes",
-    tides: "https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1415",
-    currents: "https://tidesandcurrents.noaa.gov/noaacurrents/Regions?gid=1415",
+    tides: "https://tidesandcurrents.noaa.gov/tide_predictions.html",
+    currents: "https://tidesandcurrents.noaa.gov/cdata/StationList?type=Current+Data&keyword=pug",
     areaMap: "https://wdfw.wa.gov/fishing/locations/marine-areas"
   },
   areas: [
@@ -32,6 +32,9 @@ window.FISHING = {
         { name: "Spoon (Kingfisher, Coho Killer)", targets: "Coho", note: "Trolled 2.2-2.8 mph." },
         { name: "Diamond jig / butterfly jig", targets: "Lingcod, halibut", note: "6-16 oz depending on current." }
       ],
+      station: { id: "9443090", name: "Neah Bay" },
+      zone: "pzz131",
+      launches: ["Sekiu Marina launch", "Pillar Point County Park launch"],
       tips: "Troll 2.0-2.6 mph for Chinook, faster for coho. Weather and swell can change quickly in the Strait."
     },
     {
@@ -57,6 +60,9 @@ window.FISHING = {
         { name: "Herring with flasher", targets: "Chinook", note: "Mooch or troll at depth near the points." },
         { name: "Swimbait / jig", targets: "Lingcod", note: "On structure in 40-100 ft." }
       ],
+      station: { id: "9444090", name: "Port Angeles" },
+      zone: "pzz132",
+      launches: ["Port Angeles Boat Haven launch", "Port Townsend Boat Haven launch"],
       tips: "Pinks run in numbers from August in odd years. Early morning surface fishing is best in the summer."
     },
     {
@@ -82,6 +88,9 @@ window.FISHING = {
         { name: "Blue Fox / Dick Nite spoon", targets: "Coho, pinks", note: "Light trolling." },
         { name: "Large jigs / swimbaits", targets: "Lingcod", note: "On structure." }
       ],
+      station: { id: "9449880", name: "Friday Harbor" },
+      zone: "pzz133",
+      launches: ["Washington Park boat launch Anacortes", "Friday Harbor boat launch", "Squalicum Harbor boat launch Bellingham"],
       tips: "Check current tables before heading out. Fog and wind change quickly; many anglers run out of Anacortes or Bellingham."
     },
     {
@@ -105,6 +114,9 @@ window.FISHING = {
         { name: "Spoon (Blue Fox, Pixie)", targets: "Coho, chum", note: "Cast from shore or troll slow." },
         { name: "Herring with flasher", targets: "Chinook", note: "In winter, fished deeper near bottom structure." }
       ],
+      station: { id: "9447659", name: "Everett" },
+      zone: "pzz135",
+      launches: ["Port of Everett boat launch", "Mukilteo boat launch"],
       tips: "Watch the weather: wind builds quickly in Port Susan. Check area-specific closures around river mouths."
     },
     {
@@ -131,6 +143,9 @@ window.FISHING = {
         { name: "Pink hoochie", targets: "Pinks", note: "Trolled with a flasher or cast with weight." },
         { name: "Coho Killer / Dick Nite spoon", targets: "Coho", note: "Troll 2.5-3.0 mph." }
       ],
+      station: { id: "9444900", name: "Port Townsend" },
+      zone: "pzz134",
+      launches: ["Port of Edmonds boat launch", "Port of Kingston boat launch", "Mukilteo boat launch"],
       tips: "Blackmouth are bait-sensitive in winter; a clean, fresh herring tends to outperform. Many anglers launch at Edmonds, Everett or Pt No Point."
     },
     {
@@ -156,6 +171,9 @@ window.FISHING = {
         { name: "Spoon (Pixie, Blue Fox)", targets: "Chum, coho", note: "Cast from piers and beaches." },
         { name: "Squid jig (egi)", targets: "Squid", note: "Glow colors at night." }
       ],
+      station: { id: "9447130", name: "Seattle" },
+      zone: "pzz135",
+      launches: ["Shilshole Bay Marina Seattle", "Eagle Harbor Bainbridge Island boat launch", "Port Orchard boat launch"],
       tips: "Check closures around the Duwamish and Lake Washington Ship Canal. Be mindful of heavy ferry and shipping traffic."
     },
     {
@@ -181,6 +199,9 @@ window.FISHING = {
         { name: "Buzz Bomb / spoon", targets: "Chum, coho (shore)", note: "Cast and retrieve." },
         { name: "Squid jig (egi)", targets: "Squid", note: "At night near pier lights." }
       ],
+      station: { id: "9446484", name: "Tacoma" },
+      zone: "pzz135",
+      launches: ["Des Moines Marina boat launch", "Point Defiance Boathouse Marina Tacoma"],
       tips: "Pt D is crowded on weekends. Watch for tug and barge traffic in Commencement Bay."
     },
     {
@@ -205,6 +226,9 @@ window.FISHING = {
         { name: "Spoon (Pixie, Blue Fox)", targets: "Coho, cutthroat", note: "Light casting." },
         { name: "Hoochie", targets: "Pinks, coho", note: "3-in hoochie behind a small flasher." }
       ],
+      station: { id: "9445272", name: "Quilcene" },
+      zone: "pzz135",
+      launches: ["Misery Point boat launch Hood Canal", "Pleasant Harbor Marina Brinnon", "Twanoh State Park boat launch"],
       tips: "Hypoxia (low oxygen) can affect fish in late summer; check WDFW notices. Be mindful of tides on the south-end flats."
     },
     {
@@ -230,6 +254,9 @@ window.FISHING = {
         { name: "Chum jig / fly", targets: "Chum", note: "Pink, green, chartreuse." },
         { name: "Squid jig (egi)", targets: "Squid", note: "At night near pier lights." }
       ],
+      station: { id: "9446969", name: "Olympia" },
+      zone: "pzz135",
+      launches: ["Boston Harbor Marina Olympia", "Luhr Beach boat launch Nisqually", "Zittel's Marina Olympia"],
       tips: "Large tide swings expose the flats quickly. Bring a tide table and watch the water on shore trips."
     }
   ]

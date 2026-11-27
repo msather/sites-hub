@@ -1,0 +1,10 @@
+{
+  "name": "Puget Sound Fishing Guide",
+  "short_name": "Sound Fishing",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b6e8f",
+  "theme_color": "#0b6e8f",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

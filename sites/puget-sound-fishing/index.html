@@ -6,6 +6,8 @@
 <title>Puget Sound Fishing Guide</title>
 <meta name="description" content="Puget Sound fishing by WDFW Marine Area: what is biting each month, tide timing and lures that work.">
 <link rel="icon" href="favicon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b6e8f">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,10 +38,26 @@
     <label>Area
       <select id="area"></select>
     </label>
+    <label>Spots
+      <select id="access">
+        <option value="all">Boat and shore</option>
+        <option value="boat">Boat spots</option>
+        <option value="shore">Shore / pier spots</option>
+      </select>
+    </label>
   </section>
+
+  <section id="best" class="best" aria-live="polite"></section>
 
   <p id="summary" class="summary" aria-live="polite"></p>
   <div id="areas"></div>
+
+  <section class="checklist" id="checklist">
+    <h2>Trip checklist</h2>
+    <p class="muted">Tick items off. Your ticks are saved on this device only.</p>
+    <div id="checkitems"></div>
+    <button type="button" id="resetChecks">Reset checklist</button>
+  </section>
 
   <section class="notice">
     <strong>Tides and currents:</strong> Use
@@ -49,7 +67,7 @@
     <a id="mapLink" href="#">WDFW Marine Area map</a>.
   </section>
 </main>
-<footer class="wrap"><small>Information is general guidance only. Fish safely, wear a life jacket and follow all regulations.</small></footer>
+<footer class="wrap"><p id="offlineNote" class="muted"></p><small>Information is general guidance only. Fish safely, wear a life jacket and follow all regulations.</small></footer>
 <noscript><p class="wrap">This guide needs JavaScript to display the area data.</p></noscript>
 <script src="data.js"></script>
 <script src="app.js"></script>
