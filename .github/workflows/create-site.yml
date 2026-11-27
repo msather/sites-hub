@@ -25,24 +25,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Validate and render site from templates/site-starter
+      - name: Create site from templates/site-starter and commit to the hub
         env:
           NAME: ${{ inputs.name }}
           DESCRIPTION: ${{ inputs.description }}
         run: |
-          python3 scripts/new_site.py --name "$NAME" --description "$DESCRIPTION"
-
-      - name: Commit registry and files to the hub
-        env:
-          NAME: ${{ inputs.name }}
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sites.md sites
-          git commit -m "Add site: $NAME"
-          git pull --rebase -q origin main
-          git push origin HEAD:main
+          # Always build on the newest main, and retry if another run pushed first.
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/new_site.py --name "$NAME" --description "$DESCRIPTION" || exit 1
+            git add sites.md sites
+            git commit -q -m "Add site: $NAME"
+            if git push -q origin HEAD:main; then
+              echo "Pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "Push raced with another change, retrying..."
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not push after 5 attempts"
+          exit 1
 
   deploy:
     needs: create

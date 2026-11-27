@@ -2,6 +2,11 @@
 
 Newest first. Add an entry whenever something unexpected is found and fixed (see `.claude/skills/learn/SKILL.md`). Each entry: what happened, cause, fix.
 
+## 2026-11-27: Two Create site runs at once conflicted
+- **What happened:** Two runs started seconds apart. The second failed with a merge conflict in `sites.md` ([failed run](https://github.com/msather/sites-hub/actions/runs/45953314417)).
+- **Cause:** The workflow checked out the snapshot of `main` from when it was *triggered*, not the newest one.
+- **Fix:** The workflow now checks out `main`, rebuilds from the newest `main` and retries the push up to 5 times. Safe to trigger several sites in a row now.
+
 ## 2026-11-27: Fishing guide data that was verified vs. not
 - **Marine forecast zones** were checked against NWS (PZZ131 Central Strait, PZZ132 East Strait, PZZ133 San Juans, PZZ134 Admiralty Inlet, PZZ135 Puget Sound/Hood Canal). My first memory of these numbers was wrong, so always look IDs up instead of recalling them.
 - **NOAA tide stations** confirmed: Seattle 9447130, Olympia 9446969, Quilcene 9445272. Not confirmed from search (from memory): Neah Bay 9443090, Port Angeles 9444090, Friday Harbor 9449880, Port Townsend 9444900, Tacoma 9446484, Everett 9447659. The page prints the station name beside the tides so a wrong one is easy to spot. Agent sessions cannot reach NOAA, so confirm in a browser: https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=<station>.

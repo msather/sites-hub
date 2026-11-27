@@ -6,6 +6,7 @@ This repo is the control center for a set of static websites on GitHub Pages. **
 The owner knows nothing about git or code. So:
 - **Answer technical questions yourself** (settings, errors, git, Actions). Decide, do, and explain simply. Ask only about things that are truly the owner's call (looks, content, purpose).
 - **Always give links** to what you discuss or change: the live page, the file or commit on GitHub, the workflow run, the settings page. Base: https://github.com/msather/sites-hub.
+- **Put every link at the bottom.** Any message to the owner that mentions a link ends with a "Links" list repeating all of them (plain URLs, one per line), even if they also appear in the text.
 - **Say what you changed** after every change, in plain language, with the link.
 - When asking the owner to click something, give the exact link and the exact button names.
 - **Learn over time:** after discovering or correcting anything, record it (skill `.claude/skills/learn`, file `docs/lessons.md`). Read `docs/lessons.md` at the start of work.
